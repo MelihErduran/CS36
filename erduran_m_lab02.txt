@@ -1,0 +1,612 @@
+/*************************************************************************/
+/* Lab 2 Question 1                                                      */
+/* Name : Melih Erduran                                                  */
+/* Student ID : 1252917                                                  */
+/* Date : 10/10/23                                                       */
+/* This program checks whether user-inputted character is a vowel or not */
+/*                                                                       */
+/*************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    char userLetter;
+
+    //Data/Input
+    printf("Enter any character : ");
+    scanf("%c", &userLetter);
+
+    //Processing & Output
+    if (userLetter == 'a' || userLetter == 'e' || userLetter == 'i' || userLetter == 'o' || userLetter == 'u' || userLetter == 'A' || userLetter == 'E' || userLetter == 'I' || userLetter == 'O' || userLetter == 'U'){
+        printf("%c is a vowel", userLetter);
+    } else {
+        printf("%c is not a vowel", userLetter);
+    }
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter any character : h
+h is not a vowel
+
+Test Run 2
+Enter any character : i
+i is a vowel
+*/
+
+
+/*********************************************************************************************/
+/* Lab 2 Question 2                                                                          */
+/* Name : Melih Erduran                                                                      */
+/* Student ID : 1252917                                                                      */
+/* Date : 10/10/23                                                                           */
+/* This program checks whether user-inputted character is a uppercase, lowercase, or a digit */
+/*                                                                                           */
+/*********************************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    char userInput;
+
+    //Data/Input
+    printf("Enter any character : ");
+    scanf("%c", &userInput);
+
+    //Processing & Output
+    if (userInput >= '0' && userInput <= '9'){
+        printf("A digit was entered");
+    } else {
+        if (userInput >= 'A' && userInput <= 'Z'){
+            printf("Uppercase character was entered");
+        } else {
+            printf("Lowercase Character was entered");
+        }
+    }
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter any character : C
+Uppercase character was entered
+
+Test Run 2
+Enter any character : b
+Lowercase Character was entered
+
+Test Run 3
+Enter any character : 5
+A digit was entered
+*/
+
+/********************************************************************************************/
+/* Lab 2 Question 3                                                                         */
+/* Name : Melih Erduran                                                                     */
+/* Student ID : 1252917                                                                     */
+/* Date : 10/10/23                                                                          */
+/* This program checks whether user-inputted number is positive, negative, or equal to zero */
+/*                                                                                          */
+/********************************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int userNumber;
+
+    //Data/Input
+    printf("Enter any number: ");
+    scanf("%d", &userNumber);
+
+    //Processing & Output
+    if (userNumber > 0){
+        printf("The number is positive");
+    } else if (userNumber < 0){
+		printf("The number is negative");
+    } else {
+		printf("The number is equal to 0");
+	}
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter any number: 0
+The number is equal to 0
+
+Test Run 2
+Enter any number: 15
+The number is positive
+
+Test Run 3
+Enter any number: -25
+The number is negative
+*/
+
+
+/**************************************************************************/
+/* Lab 2 Question 4                                                       */
+/* Name : Melih Erduran                                                   */
+/* Student ID : 1252917                                                   */
+/* Date : 10/10/23                                                        */
+/* This program checks whether user-inputted character  is a vowel or not */
+/*                                                                        */
+/**************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    char userLetter;
+
+    //Data/Input
+    printf("Enter any character : ");
+    scanf("%c", &userLetter);
+
+    //Processing & Output
+	switch(userLetter) {
+       case 'a':
+       case 'e':
+       case 'i':
+       case 'o':
+       case 'u':
+       case 'A':
+       case 'E':
+       case 'I':
+       case 'O':
+       case 'U':
+           printf("%c is a vowel", userLetter);
+           break;
+    default:
+        printf("%c is not a vowel", userLetter);
+
+   }
+   
+    return 0;
+}
+
+/*
+Test Run 1
+Enter any character : b
+b is not a vowel
+
+Test Run 2
+Enter any character : B
+B is not a vowel
+
+Test Run 3
+Enter any character : e
+e is a vowel
+*/
+
+
+/***************************************************************************/
+/* Lab 2 Question 5                                                        */
+/* Name : Melih Erduran                                                    */
+/* Student ID : 1252917                                                    */
+/* Date : 10/10/23                                                         */
+/* This program checks whether user-inputted is even, odd, or out of range */
+/*                                                                         */
+/***************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int userNum;
+
+    //Data/Input
+    printf("Enter a number between 1 to 10 : ");
+    scanf("%d", &userNum);
+
+    //Processing & Output
+	switch(userNum) {
+       case 1:
+       case 3:
+       case 5:
+       case 7:
+       case 9:
+           printf("You entered %d. That is an odd number.", userNum);
+           break;
+       case 2:
+       case 4:
+       case 6:
+       case 8:
+       case 10:
+           printf("You entered %d. That is an even number.", userNum);
+           break;
+    default:
+        printf("Number entered is outside the range.");
+
+   }
+   
+    return 0;
+}
+
+/*
+Test Run 1
+Enter a number between 1 to 10 : 5
+You entered 5. That is an odd number.
+
+Test Run 2
+Enter a number between 1 to 10 : 12
+Number entered is outside the range.
+
+Test Run 3
+Enter a number between 1 to 10 : 8
+You entered 8. That is an even number.
+*/
+
+
+/**********************************************************************************************************************/
+/* Lab 2 Question 6                                                                                                   */
+/* Name : Melih Erduran                                                                                               */
+/* Student ID : 1252917                                                                                               */
+/* Date : 10/10/23                                                                                                    */
+/* This program reads user numbers until -1 is encountered. Counts positive, negative, and zeroes entered by the user */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int userNum, negativeNum, positiveNum, zeroNum;
+    negativeNum = positiveNum = zeroNum = 0;
+
+    //Data/Input
+    printf("Enter any number , -1 to quit : ");
+    scanf("%d", &userNum);
+
+    //Processing
+    while (userNum != -1) {
+        if (userNum > 0) {
+            positiveNum++;
+        } else if (userNum < 0) {
+            negativeNum++;
+        } else {
+            zeroNum++;
+        }
+        printf("Enter any number , -1 to quit : ");
+        scanf("%d", &userNum);
+    }
+
+    //Output
+    printf("Count of positive numbers entered = %d\n", positiveNum);
+    printf("Count of negative numbers entered = %d\n", negativeNum);
+    printf("Count of zeroes numbers entered = %d\n", zeroNum);
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter any number , -1 to quit : -12
+Enter any number , -1 to quit : 108
+Enter any number , -1 to quit : -24
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : -23
+Enter any number , -1 to quit : -1
+Count of positive numbers entered = 1
+Count of negative numbers entered = 3
+Count of zeroes numbers entered = 1
+
+Test Run 2
+Enter any number , -1 to quit : 124
+Enter any number , -1 to quit : 45
+Enter any number , -1 to quit : 6
+Enter any number , -1 to quit : 7
+Enter any number , -1 to quit : 3
+Enter any number , -1 to quit : 2
+Enter any number , -1 to quit : -10000
+Enter any number , -1 to quit : -12
+Enter any number , -1 to quit : -123
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : 0
+Enter any number , -1 to quit : -1
+Count of positive numbers entered = 6
+Count of negative numbers entered = 3
+Count of zeroes numbers entered = 3
+
+Test Run 3
+Enter any number , -1 to quit : -1
+Count of positive numbers entered = 0
+Count of negative numbers entered = 0
+Count of zeroes numbers entered = 0
+*/
+
+
+/*************************************************************************************************/
+/* Lab 2 Question 7                                                                              */
+/* Name : Melih Erduran                                                                          */
+/* Student ID : 1252917                                                                          */
+/* Date : 10/10/23                                                                               */
+/* This program counts the sum of integers from user-inputted number m to user-inputted number n */
+/*                                                                                               */
+/*************************************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int numberM, numberN, sum;
+    sum = 0;
+
+    //Data/Input
+    printf("Enter the value of m : ");
+    scanf("%d", &numberM);
+    printf("Enter the value of n : ");
+    scanf("%d", &numberN);
+
+    //Processing
+    while (numberM <= numberN) {
+        sum += numberM;
+        numberM++;
+    }
+
+    //Output
+    printf("Sum = %d", sum);
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter the value of m : 7
+Enter the value of n : 11
+Sum = 45
+
+Test Run 2
+Enter the value of m : 6
+Enter the value of n : 9
+Sum = 30
+
+Test Run 3
+Enter the value of m : 4
+Enter the value of n : 20
+Sum = 204
+*/
+
+
+/************************************************************************/
+/* Lab 2 Question 8                                                     */
+/* Name : Melih Erduran                                                 */
+/* Student ID : 1252917                                                 */
+/* Date : 10/10/23                                                      */
+/* This program displays the square and cube of first n natural numbers */
+/*                                                                      */
+/************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int numberN, square, cube, counter;
+    square = cube = 0;
+    counter = 1;
+
+    //Data/Input
+    printf("Enter the value of n : ");
+    scanf("%d", &numberN);
+    printf("\n");
+    printf("-----------------------------------------------\n");
+
+    //Processing & Output
+    do{
+        square = counter * counter;
+        cube = counter * counter * counter;
+        printf("|       %-6d|       %-9d|      %-8d|\n", counter, square, cube);
+        counter++;
+    } while (counter <= numberN);
+    printf("-----------------------------------------------\n");
+
+    return 0;
+}
+
+/*
+Test Run 1
+-----------------------------------------------
+|       1     |       1        |      1       |
+|       2     |       4        |      8       |
+|       3     |       9        |      27      |
+|       4     |       16       |      64      |
+-----------------------------------------------
+
+Test Run 2
+-----------------------------------------------
+|       1     |       1        |      1       |
+|       2     |       4        |      8       |
+|       3     |       9        |      27      |
+|       4     |       16       |      64      |
+|       5     |       25       |      125     |
+|       6     |       36       |      216     |
+-----------------------------------------------
+
+Test Run 3
+-----------------------------------------------
+|       1     |       1        |      1       |
+|       2     |       4        |      8       |
+|       3     |       9        |      27      |
+|       4     |       16       |      64      |
+|       5     |       25       |      125     |
+|       6     |       36       |      216     |
+|       7     |       49       |      343     |
+|       8     |       64       |      512     |
+|       9     |       81       |      729     |
+|       10    |       100      |      1000    |
+-----------------------------------------------
+*/
+
+
+/************************************************************************/
+/* Lab 2 Question 9                                                     */
+/* Name : Melih Erduran                                                 */
+/* Student ID : 1252917                                                 */
+/* Date : 10/10/23                                                      */
+/* This program prints a pattern according to a user-inputted base size */
+/*                                                                      */
+/************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    int baseSize;
+
+    //Data/Input
+    printf("Enter base size of the triangle for pattern : ");
+    scanf("%d", &baseSize);
+    printf("\n");
+
+    //Processing & Output
+    for (int i = 0; i < baseSize; i++) {
+        int currentNum = 1;
+        for (int j = 0; j <= i; j++) {
+            printf("%d", currentNum);
+            currentNum++;
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter base size of the triangle for pattern : 5
+
+1
+12
+123
+1234
+12345
+
+Test Run 2
+Enter base size of the triangle for pattern : 9
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+
+Test Run 3
+Enter base size of the triangle for pattern : 3
+
+1
+12
+123
+*/
+
+
+/**************************************************************************************/
+/* Lab 2 Question 10                                                                  */
+/* Name : Melih Erduran                                                               */
+/* Student ID : 1252917                                                               */
+/* Date : 10/10/23                                                                    */
+/* This program prints a pattern according to a user-inputted highest alphabet letter */
+/*                                                                                    */
+/**************************************************************************************/
+
+#include<stdio.h>
+
+int main()
+{
+    //Declaration
+    char highestAlphabet;
+
+    //Data/Input
+    printf("Enter highest alphabet : ");
+    scanf("%c", &highestAlphabet);
+
+    //Processing & Output
+    for (char i = 'A'; i <= highestAlphabet; i++) {
+        char currentLetter = 'A';
+        for (char j = 'A'; j <= i; j++) {
+            printf("%c", currentLetter);
+            currentLetter++;
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+/*
+Test Run 1
+Enter highest alphabet : F
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+
+Test Run 2
+Enter highest alphabet : Z
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+ABCDEFG
+ABCDEFGH
+ABCDEFGHI
+ABCDEFGHIJ
+ABCDEFGHIJK
+ABCDEFGHIJKL
+ABCDEFGHIJKLM
+ABCDEFGHIJKLMN
+ABCDEFGHIJKLMNO
+ABCDEFGHIJKLMNOP
+ABCDEFGHIJKLMNOPQ
+ABCDEFGHIJKLMNOPQR
+ABCDEFGHIJKLMNOPQRS
+ABCDEFGHIJKLMNOPQRST
+ABCDEFGHIJKLMNOPQRSTU
+ABCDEFGHIJKLMNOPQRSTUV
+ABCDEFGHIJKLMNOPQRSTUVW
+ABCDEFGHIJKLMNOPQRSTUVWX
+ABCDEFGHIJKLMNOPQRSTUVWXY
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Test Run 3
+Enter highest alphabet : O
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+ABCDEFG
+ABCDEFGH
+ABCDEFGHI
+ABCDEFGHIJ
+ABCDEFGHIJK
+ABCDEFGHIJKL
+ABCDEFGHIJKLM
+ABCDEFGHIJKLMN
+ABCDEFGHIJKLMNO
+*/

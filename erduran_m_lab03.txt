@@ -1,0 +1,285 @@
+/***************************************************/
+/* Lab 3 Question 1                                */
+/* Name : Melih Erduran                            */
+/* Student ID : 1252917                            */
+/* Date : 11/7/23                                  */
+/* This program prints information using functions */
+/*                                                 */
+/***************************************************/
+
+#include <stdio.h>
+
+void texas();
+void California();
+
+int main(){
+    //Output
+    texas();
+    California();
+
+    return 0;
+}
+
+void texas(){
+    //Declaration & Data
+    int birds = 5000;
+
+    //Output
+    printf("Texas has %d birds\n", birds);
+}
+
+void California(){
+    //Declaration & Data
+    int birds = 8000;
+
+    //Output
+    printf("California has %d birds\n", birds);
+}
+
+/*
+Test Run 1
+Texas has 5000 birds
+California has 8000 birds
+*/
+
+
+/***********************************************/
+/* Lab 3 Question 2                            */
+/* Name : Melih Erduran                        */
+/* Student ID : 1252917                        */
+/* Date : 11/7/23                              */
+/* This program calculates and prints interest */
+/*                                             */
+/***********************************************/
+
+#include <stdio.h>
+
+double show_interest(double principal, double rate, double periods);
+
+int main(){
+    //Declaration
+    float principal, rate, periods, interest;
+
+    //Input
+    printf("Please input the principal amount, rate, and period(in years): ");
+    scanf("%f %f %f", &principal, &rate, &periods);
+
+    //Calculations
+    interest = show_interest(principal, rate, periods);
+
+    printf("The simple interest will be $%.2f", interest);
+
+    return 0;
+}
+
+double show_interest(double principal, double rate, double periods){
+    //Declaration
+    float interest;
+
+    //Calculations
+    interest = principal * rate * periods;
+
+    //Output
+    return interest;
+}
+
+/*
+Test Run 1
+Please input the principal amount, rate, and period(in years): 10000 .1 1
+The simple interest will be $1000.00
+
+Test Run 2
+Please input the principal amount, rate, and period(in years): 1000 .1 1
+The simple interest will be $100.00
+
+Test Run 3
+Please input the principal amount, rate, and period(in years): 50000 .2 3
+The simple interest will be $30000.00
+*/
+
+
+/*****************************************/
+/* Lab 3 Question 3                      */
+/* Name : Melih Erduran                  */
+/* Student ID : 1252917                  */
+/* Date : 11/7/23                        */
+/* This program calculates triangle area */
+/*                                       */
+/*****************************************/
+
+#include<stdio.h>
+
+void getData(float *length, float *height);
+float trigArea(float length, float height);
+void displayData(float length, float height, float area);
+
+int main(){
+    //Declaration
+    float length, height, area;
+
+    //Data/Input
+    getData(&length, &height);
+
+    //Calculations
+    area = trigArea(length, height);
+
+    //Output
+    displayData(length, height, area);
+
+    return 0;
+}
+
+void getData(float *length, float *height){
+    //Input
+    printf("Length of Triangle: ");
+    scanf("%f", length);
+    printf("Perpendicular Height of Triangle: ");
+    scanf("%f", height);
+}
+
+float trigArea(float length, float height){
+    //Declaration
+    float area;
+
+    //Calculations
+    area = length * height * 0.5;
+
+    //Output
+    return area;
+}
+
+void displayData(float length, float height, float area){
+    //Output
+    printf("Triangle Length = %.2f\n", length);
+    printf("Triangle Height = %.2f\n", height);
+    printf("Triangle Area = %.2f\n", area);
+}
+
+/*
+Test Run 1
+Length of Triangle: 5
+Perpendicular Height of Triangle: 5
+Triangle Length = 5.00
+Triangle Height = 5.00
+Triangle Area = 12.50
+
+Test Run 2
+Length of Triangle: 4
+Perpendicular Height of Triangle: 4
+Triangle Length = 4.00
+Triangle Height = 4.00
+Triangle Area = 8.00
+
+Test Run 3
+Length of Triangle: 3
+Perpendicular Height of Triangle: 3
+Triangle Length = 3.00
+Triangle Height = 3.00
+Triangle Area = 4.50
+*/
+
+
+/******************************************/
+/* Lab 3 Question 4                       */
+/* Name : Melih Erduran                   */
+/* Student ID : 1252917                   */
+/* Date : 11/7/23                         */
+/* This program calculates the pay amount */
+/*                                        */
+/******************************************/
+
+#include<stdio.h>
+float get_sales();
+float get_advanced_pay();
+float determine_comm_rate(float sales);
+
+int main()
+{
+    //declaration
+    double sales, advanced_pay, comm_rate, pay;
+
+    //call functions
+    sales = get_sales();
+    advanced_pay = get_advanced_pay();
+    comm_rate = determine_comm_rate(sales);
+
+    //calculations
+    pay = sales * comm_rate - advanced_pay;
+
+    //output
+    printf("The pay is $%.2f", pay);
+
+    if (pay < 0)
+    {
+        printf("\nThe salesperson must reimburse the company.");
+    }
+
+    return 0;
+}
+
+float get_sales(){
+    //Declaration
+    float sales;
+
+    //Data/Input
+    printf("Enter the monthly sales: ");
+    scanf("%f", &sales);
+
+    //Output
+    return sales;
+}
+
+float get_advanced_pay(){
+    //Declaration
+    float advancedPay;
+
+    //Data/Input
+    printf("Enter the amount of advanced pay, or enter 0 if no advanced pay was given.");
+    printf("\nAdvanced Pay: ");
+    scanf("%f", &advancedPay);
+
+    //Output
+    return advancedPay;
+}
+
+float determine_comm_rate(float sales){
+    //Declaration
+    float commRate;
+
+    //Calculations
+    if (sales > 21999.99) {
+        commRate = 0.18;
+    } else if (sales > 18000.00){
+        commRate = 0.16;
+    } else if (sales > 15000.00){
+        commRate = 0.14;
+    } else if (sales > 10000.00){
+        commRate = 0.12;
+    } else {
+        commRate = 0.10;
+    }
+
+    //Output
+    return commRate;
+}
+
+/*
+Test Run 1
+Enter the monthly sales: 14550.00
+Enter the amount of advanced pay, or enter 0 if no advanced pay was given.
+Advanced Pay: 1000.00
+The pay is $746.00
+
+Test Run 2
+Enter the monthly sales: 9500
+Enter the amount of advanced pay, or enter 0 if no advanced pay was given.
+Advanced Pay: 0
+The pay is $950.00
+
+Test Run 3
+Enter the monthly sales: 12000.00
+Enter the amount of advanced pay, or enter 0 if no advanced pay was given.
+Advanced Pay: 2000.00
+The pay is $-560.00
+The salesperson must reimburse the company.
+*/
