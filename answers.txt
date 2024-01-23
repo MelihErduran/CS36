@@ -1,4 +1,0 @@
-Part 1:
-What is the Big O of the method: O(n)
-
-How did you get to that answer?: The array runs until i and j cross each other. Since  they both start at opposite ends of the array, they will meet in the middle, or n/2. We then remove the constant factor and get O(n).
